@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Desktop Console</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="desktopShell" class="desktop-shell">
+    <div class="sprite-window">
+      <img id="spriteImage" src="assets/sprites/normal.png" draggable="false" />
+    </div>
+
+    <div class="console-side">
+      <div class="title-bar">
+        <span>C:\Windows\System32\cmd.exe</span>
+
+        <div class="window-buttons">
+          <button id="settingsBtn">...</button>
+          <button id="closeBtn">X</button>
+        </div>
+      </div>
+
+      <div id="settingsMenu" class="settings-menu hidden">
+        <label>
+          Текст
+          <input id="textInput" type="text" />
+        </label>
+
+        <label>
+          Имя спрайта
+          <input id="spriteNameInput" type="text" placeholder="Ksio" />
+        </label>
+
+        <label>
+          Скорость
+          <select id="speedSelect">
+            <option value="220">Очень медленно</option>
+            <option value="150">Медленно</option>
+            <option value="90">Стандартно</option>
+            <option value="45">Быстро</option>
+            <option value="20">Очень быстро</option>
+          </select>
+        </label>
+
+        <label class="checkbox-label">
+          <input id="showSpriteCheckbox" type="checkbox" />
+          Показывать спрайт
+        </label>
+
+        <button id="applyBtn">Применить</button>
+      </div>
+
+      <div class="console">
+        <div class="line">C:\</div>
+
+        <div class="line">
+          <span id="typedText"></span><span class="cursor">_</span>
+        </div>
+
+        <div class="command-row">
+          <span class="prompt">&gt;</span>
+          <input id="commandInput" type="text" placeholder="открыть Opera" />
+          <button id="sendBtn">&gt;</button>
+        </div>
+
+        <div id="statusLine" class="status-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
