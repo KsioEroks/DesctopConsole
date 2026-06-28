@@ -1,0 +1,217 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: transparent;
+  font-family: Consolas, "Courier New", monospace;
+}
+
+.desktop-shell {
+  width: 540px;
+  height: 200px;
+  display: flex;
+  border: 2px solid white;
+  background: rgba(0, 0, 0, 0.78);
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.85);
+}
+
+.sprite-window {
+  width: 118px;
+  height: 196px;
+  border-right: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 5, 5, 0.7);
+  -webkit-app-region: drag;
+}
+
+#spriteImage {
+  max-width: 108px;
+  max-height: 176px;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
+}
+
+.console-side {
+  position: relative;
+  width: 418px;
+  height: 196px;
+  color: #00ff00;
+}
+
+.desktop-shell.sprite-hidden {
+  width: 420px;
+}
+
+.desktop-shell.sprite-hidden .sprite-window {
+  display: none;
+}
+
+.desktop-shell.sprite-hidden .console-side {
+  width: 416px;
+}
+
+.title-bar {
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 8px;
+  padding-right: 6px;
+  color: white;
+  background: rgba(22, 22, 22, 0.82);
+  font-size: 13px;
+  user-select: none;
+  -webkit-app-region: drag;
+}
+
+.window-buttons {
+  display: flex;
+  gap: 8px;
+  -webkit-app-region: no-drag;
+}
+
+.window-buttons button {
+  min-width: 18px;
+  height: 20px;
+  border: none;
+  color: white;
+  background: transparent;
+  font-size: 14px;
+  cursor: pointer;
+  font-family: Consolas, "Courier New", monospace;
+}
+
+.window-buttons button:hover {
+  color: #00ff00;
+}
+
+.console {
+  padding: 8px;
+  font-size: 15px;
+  line-height: 1.45;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+.line {
+  min-height: 20px;
+}
+
+.cursor {
+  animation: blinkCursor 0.75s infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 45% {
+    opacity: 1;
+  }
+
+  46%, 100% {
+    opacity: 0;
+  }
+}
+
+.command-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.prompt {
+  color: #00ff00;
+}
+
+#commandInput {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #00ff00;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 14px;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+#commandInput::placeholder {
+  color: rgba(0, 255, 0, 0.45);
+}
+
+#sendBtn {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #00ff00;
+  background: black;
+  color: #00ff00;
+  cursor: pointer;
+  font-family: Consolas, "Courier New", monospace;
+}
+
+.status-line {
+  margin-top: 6px;
+  min-height: 16px;
+  font-size: 12px;
+}
+
+.settings-menu {
+  position: absolute;
+  top: 32px;
+  right: 8px;
+  width: 220px;
+  padding: 9px;
+  border: 1px solid white;
+  background: rgba(0, 0, 0, 0.95);
+  color: #00ff00;
+  z-index: 10;
+  font-size: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+.settings-menu label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.settings-menu input,
+.settings-menu select {
+  width: 100%;
+  margin-top: 3px;
+  padding: 4px;
+  border: 1px solid #00ff00;
+  background: black;
+  color: #00ff00;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 12px;
+}
+
+.checkbox-label {
+  display: flex !important;
+  align-items: center;
+  gap: 7px;
+}
+
+.checkbox-label input {
+  width: auto;
+  margin: 0;
+}
+
+.settings-menu button {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #00ff00;
+  background: black;
+  color: #00ff00;
+  cursor: pointer;
+  font-family: Consolas, "Courier New", monospace;
+}
